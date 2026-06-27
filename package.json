@@ -1,0 +1,12 @@
+{
+  "name": "toastmasters-pachuca-design-tokens",
+  "version": "1.0.0",
+  "description": "Design Token System for Toastmasters Pachuca",
+  "license": "UNLICENSED",
+  "files": [
+    "tokens.json",
+    "tokens.types.ts",
+    "tokens.web.ts",
+    "tokens.native.ts"
+  ]
+}

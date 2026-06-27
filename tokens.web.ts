@@ -1,0 +1,144 @@
+import type { RawTokens } from './tokens.types';
+import rawTokens from './tokens.json';
+
+const tokens = rawTokens as unknown as RawTokens;
+
+export const tokensWeb = {
+  colors: {
+    brand: {
+      primary: tokens.brand.primary,
+      secondary: tokens.brand.secondary,
+      accent: tokens.brand.accent,
+    },
+    status: tokens.semantic.status,
+    alert: tokens.semantic.alert,
+    neutral: tokens.neutral,
+    surface: tokens.surface,
+    text: tokens.text,
+    border: tokens.border,
+    action: tokens.action,
+  },
+  typography: {
+    fontFamily: {
+      sans: [tokens.typography.family.main, 'ui-sans-serif', 'system-ui'],
+      body: [tokens.typography.family.body, 'ui-sans-serif', 'system-ui'],
+      script: [tokens.typography.family.script, 'cursive'],
+    },
+    fontSize: tokens.typography.size,
+    fontWeight: tokens.typography.weight,
+  },
+  borderRadius: tokens.radius,
+  spacing: tokens.spacing,
+  boxShadow: tokens.shadow,
+  zIndex: tokens.depth,
+  opacity: tokens.opacity,
+  icon: tokens.icon,
+  transition: tokens.transition,
+  gradient: tokens.gradient,
+};
+
+export const generateCssVariables = () => {
+  return `
+    :root {
+      /* Brand */
+      --brand-primary: ${tokens.brand.primary};
+      --brand-secondary: ${tokens.brand.secondary};
+      --brand-accent: ${tokens.brand.accent};
+
+      /* Status generales */
+      --status-active: ${tokens.semantic.status.active};
+      --status-processing: ${tokens.semantic.status.processing};
+      --status-pending: ${tokens.semantic.status.pending};
+      --status-failed: ${tokens.semantic.status.failed};
+      --status-attention: ${tokens.semantic.status.attention};
+      --status-highlight: ${tokens.semantic.status.highlight};
+      --status-inactive: ${tokens.semantic.status.inactive};
+      --status-completed: ${tokens.semantic.status.completed};
+
+      /* Alertas (color de borde/texto/icono) */
+      --alert-warning: ${tokens.semantic.alert.warning};
+      --alert-info: ${tokens.semantic.alert.info};
+      --alert-error: ${tokens.semantic.alert.error};
+      --alert-success: ${tokens.semantic.alert.success};
+
+      /* Superficies — fondos explícitos por capa de UI */
+      --surface-app: ${tokens.surface.app};
+      --surface-card: ${tokens.surface.card};
+      --surface-modal: ${tokens.surface.modal};
+      --surface-overlay: ${tokens.surface.overlay};
+      --surface-popover: ${tokens.surface.popover};
+      --surface-toast: ${tokens.surface.toast};
+      --surface-alert-bg-warning: ${tokens.surface.alertBg.warning};
+      --surface-alert-bg-error: ${tokens.surface.alertBg.error};
+      --surface-alert-bg-success: ${tokens.surface.alertBg.success};
+      --surface-alert-bg-info: ${tokens.surface.alertBg.info};
+
+      /* Textos */
+      --text-primary: ${tokens.text.primary};
+      --text-secondary: ${tokens.text.secondary};
+      --text-muted: ${tokens.text.muted};
+      --text-disabled: ${tokens.text.disabled};
+      --text-inverse: ${tokens.text.inverse};
+      --text-brand: ${tokens.text.brand};
+
+      /* Bordes */
+      --border-default: ${tokens.border.default};
+      --border-hover: ${tokens.border.hover};
+      --border-focus: ${tokens.border.focus};
+      --border-disabled: ${tokens.border.disabled};
+      --border-error: ${tokens.border.error};
+      --border-success: ${tokens.border.success};
+
+      /* Acciones (Botones, links) */
+      --action-primary: ${tokens.action.primary};
+      --action-primary-hover: ${tokens.action.primaryHover};
+      --action-secondary: ${tokens.action.secondary};
+      --action-secondary-hover: ${tokens.action.secondaryHover};
+      --action-disabled: ${tokens.action.disabled};
+      --action-disabled-text: ${tokens.action.disabledText};
+
+      /* Grises neutros */
+      --gray-50: ${tokens.neutral.gray['50']};
+      --gray-100: ${tokens.neutral.gray['100']};
+      --gray-200: ${tokens.neutral.gray['200']};
+      --gray-300: ${tokens.neutral.gray['300']};
+      --gray-400: ${tokens.neutral.gray['400']};
+      --gray-500: ${tokens.neutral.gray['500']};
+      --gray-600: ${tokens.neutral.gray['600']};
+      --gray-700: ${tokens.neutral.gray['700']};
+      --gray-800: ${tokens.neutral.gray['800']};
+      --gray-900: ${tokens.neutral.gray['900']};
+
+      /* Tipografía */
+      --font-main: ${tokens.typography.family.main};
+      --font-body: ${tokens.typography.family.body};
+      --font-script: ${tokens.typography.family.script};
+
+      /* Opacidad */
+      --opacity-0: ${tokens.opacity['0']};
+      --opacity-25: ${tokens.opacity['25']};
+      --opacity-50: ${tokens.opacity['50']};
+      --opacity-75: ${tokens.opacity['75']};
+      --opacity-100: ${tokens.opacity['100']};
+
+      /* Tamaños de Iconos */
+      --icon-sm: ${tokens.icon.sm};
+      --icon-md: ${tokens.icon.md};
+      --icon-lg: ${tokens.icon.lg};
+      --icon-xl: ${tokens.icon.xl};
+
+      /* Transiciones y Animaciones */
+      --transition-duration-fast: ${tokens.transition.duration.fast};
+      --transition-duration-normal: ${tokens.transition.duration.normal};
+      --transition-duration-slow: ${tokens.transition.duration.slow};
+      --transition-easing-linear: ${tokens.transition.easing.linear};
+      --transition-easing-ease: ${tokens.transition.easing.ease};
+      --transition-easing-in: ${tokens.transition.easing.in};
+      --transition-easing-out: ${tokens.transition.easing.out};
+      --transition-easing-in-out: ${tokens.transition.easing.inOut};
+
+      /* Gradientes */
+      --gradient-loyal-to-maroon: ${tokens.gradient.loyalToMaroon};
+    }
+  `;
+};
