@@ -36,6 +36,19 @@ El sistema de diseño inyecta automáticamente las familias tipográficas oficia
 
 ## 🛠 Instalación y Uso
 
+Al estar alojado en un repositorio público de GitHub, puedes instalar este paquete directamente en cualquier proyecto Node usando tu gestor de paquetes preferido:
+
+```bash
+# Usando npm
+npm install VManuelSM/toastmasters-pachuca-design-tokens
+
+# Usando yarn
+yarn add VManuelSM/toastmasters-pachuca-design-tokens
+
+# Usando pnpm
+pnpm add VManuelSM/toastmasters-pachuca-design-tokens
+```
+
 Este repositorio contiene exportaciones listas para usarse tanto en entornos Web (React, Vue, HTML puro) como nativos (React Native).
 
 ### Web (`tokens.web.ts`)
