@@ -17,7 +17,10 @@ Los colores principales de la marca, renderizados a continuación:
 
 ### Gradientes
 También incluye el gradiente de la marca de uso frecuente:
-* **Loyal to Maroon**: `linear-gradient(to right, #004165, #772432)`
+
+| Gradiente | Muestra | Código CSS |
+| :--- | :---: | :--- |
+| **Loyal to Maroon** | <img src="./assets/loyal-to-maroon-gradient.svg" width="200" height="50" alt="Loyal to Maroon Gradient" /> | `linear-gradient(to right, #004165, #772432)` |
 
 ---
 
